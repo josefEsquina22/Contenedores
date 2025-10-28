@@ -10,7 +10,7 @@ const app = express()
 mongoose.connect('mongodb://josef:password@monguito:27017/miapp?authSource=admin')
 
 app.get('/', async (_req, res) => {
-console.log('listando...')
+console.log('listand...')
 const animales = await Animal.find();
 return res.send(animales)
 })
