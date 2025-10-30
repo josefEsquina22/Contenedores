@@ -1,0 +1,14 @@
+services:
+  chancho:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - monquito
+  monquito:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=josef  
+      - MONGO_INITDB_ROOT_PASSWORD=password
