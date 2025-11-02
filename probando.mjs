@@ -16,7 +16,7 @@ return res.send(animales)
 })
 app.get('/crear', async (_req, res) => {
 console.log('creando...')
-await Animal.create({ tipo: 'joseffff', estado: 'Feliz' })
+await Animal.create({ tipo: 'josef', estado: 'Estudiando' })
 return res.send('ok')
 })
 

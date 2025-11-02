@@ -5,6 +5,8 @@ services:
       - "3001:3000"
     depends_on:
       - monquito
+    volumes:
+      - .:/home/app
   monquito:
     image: mongo
     ports:
@@ -12,3 +14,9 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=josef  
       - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo-data:/data/db
+      # mysql -> /var/lib/mysql
+      # postgres -> /var/lib/postgresql/data
+volumes:
+  mongo-data:
